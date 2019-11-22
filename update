@@ -183,9 +183,9 @@ if [ "$there" -gt "0" ] ; then
     ssh_cmd 'echo 0x037 > /sys/kernel/debug/iio/iio:device1/direct_reg_access'
     device_id=$(ssh_cmd 'cat /sys/kernel/debug/iio/iio:device1/direct_reg_access')
     if [ "p${device_id}" = "p0xA" ] ; then
-	echo updating to AD9364
-        ssh_cmd '/usr/sbin/fw_setenv attr_name compatible'
-        ssh_cmd '/usr/sbin/fw_setenv attr_val ad9364'
+	#echo updating to AD9364
+        #ssh_cmd '/usr/sbin/fw_setenv attr_name compatible'
+        #ssh_cmd '/usr/sbin/fw_setenv attr_val ad9364'
         reset_pluto
     fi
 fi 
